@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HBNB - 3</title>
+    <!-- Import JQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- Import the 3-hbnb.js script -->
+    <script src="../static/scripts/3-hbnb.js?{{ cache_id }}"></script>
+    <!-- Import CSS files -->
+    <link rel="stylesheet" href="../static/styles/4-common.css?{{ cache_id }}">
+    <link rel="stylesheet" href="../static/styles/3-header.css?{{ cache_id }}">
+    <link rel="stylesheet" href="../static/styles/1-places.css?{{ cache_id }}">
+</head>
+<body>
+    <header>
+        <h1>HBNB</h1>
+        <div id="api_status" style="float: right; width: 40px; height: 40px; background-color: #cccccc; margin-right: 30px;"></div>
+    </header>
+    <section class="filters">
+        <div class="amenities">
+            <h4>Amenities</h4>
+            <ul>
+                {% for amenity in amenities %}
+                    <li>
+                        <input type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}">
+                        {{ amenity.name }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+    <section class="places">
+        <!-- This is where the places will be dynamically loaded via JavaScript -->
+    </section>
+</body>
+</html>
